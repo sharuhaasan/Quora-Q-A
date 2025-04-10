@@ -20,28 +20,32 @@ Users can register, log in, post questions, answer the questions, and like answe
 
 ### 1. Clone the Repository
 
-```bash
+```
 git clone https://github.com/sharuhaasan/Quora-Q-A.git
 cd quora
-
+```
+```
 ##  Create and Activate Virtual Environment:
 
 python -m venv venv
 venv\Scripts\activate
-
+```
+```
 ##  Install Dependencies:
 
 pip install -r requirements.txt
-
+```
+```
 ##  Run Migrations:
 
 python manage.py makemigrations
 python manage.py migrate
-
+```
+```
 ##  Start the Development Server:
 
 python manage.py runserver
-
+```
 ---
 
 ##  URL Patterns & What They Do
@@ -103,12 +107,12 @@ All forms are built using **Django Forms** and rendered in templates using `{{ f
 
 
 ##  Testing in Django Shell:
-
+```
 from django.contrib.auth.models import User
 from yourapp.models import Question, Answer, Like
 
 User.objects.all()
 Question.objects.all()
-
+```
 
 
