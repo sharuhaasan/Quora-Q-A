@@ -68,7 +68,7 @@ Here’s a breakdown of each view and its purpose:
 
 | Form Name          | Purpose                          |
 |--------------------|----------------------------------|
-| `UserRegisterForm` | For registering new users        |
+| `RegisterForm` | For registering new users        |
 | `QuestionForm`     | For posting new questions        |
 | `AnswerForm`       | For answering questions          |
 
@@ -107,6 +107,9 @@ All forms are built using **Django Forms** and rendered in templates using `{{ f
 
 
 ##  Testing in Django Shell:
+```
+python manage.py shell
+```
 ```
 from django.contrib.auth.models import User
 from yourapp.models import Question, Answer, Like
