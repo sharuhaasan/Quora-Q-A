@@ -18,32 +18,32 @@ Users can register, log in, post questions, answer the questions, and like answe
 
 ##  Setup Instructions
 
-### 1. Clone the Repository
+###  Clone the Repository
 
 ```
 git clone https://github.com/sharuhaasan/Quora-Q-A.git
 cd quora
 ```
-```
-##  Create and Activate Virtual Environment:
 
+##  Create and Activate Virtual Environment:
+```
 python -m venv venv
 venv\Scripts\activate
 ```
-```
-##  Install Dependencies:
 
+##  Install Dependencies:
+```
 pip install -r requirements.txt
 ```
-```
-##  Run Migrations:
 
+##  Run Migrations:
+```
 python manage.py makemigrations
 python manage.py migrate
 ```
-```
-##  Start the Development Server:
 
+##  Start the Development Server:
+```
 python manage.py runserver
 ```
 ---
