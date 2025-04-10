@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Question:</h2>
+<p><strong>{{ question.text }}</strong> — asked by {{ question.user.username }}</p>
+<hr>
+
+{% if user.is_authenticated %}
+    <h3>Your Answer</h3>
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+{% else %}
+    <p><a href="{% url 'login' %}">Login</a> to answer.</p>
+{% endif %}
+
+<hr>
+<h3>Answers</h3>
+<ul>
+    {% for answer in answers %}
+        <li>
+            {{ answer.content }} — <i>{{ answer.user.username }}</i>
+            {% if user.is_authenticated %}
+                (<a href="{% url 'like_answer' answer.id %}">Like</a> {{ answer.like_set.count }})
+            {% else %}
+                (Like {{ answer.like_set.count }}) <span style="color:gray;">(Login to like)</span>
+            {% endif %}
+        </li>
+    {% empty %}
+        <li>No answers yet. Be the first to answer!</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

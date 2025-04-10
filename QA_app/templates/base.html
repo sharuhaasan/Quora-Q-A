@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Quora Clone</title></head>
+<body>
+    {% if user.is_authenticated %}
+        Hello!! {{ user.username }} | 
+        <a href="{% url 'home' %}">Home</a> | 
+        <a href="{% url 'ask_question' %}">Post Question</a> |
+        <form action="{% url 'logout' %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    {% else %}
+    <a href="{% url 'home' %}">Home</a> | <a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Register</a>
+    {% endif %}
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
